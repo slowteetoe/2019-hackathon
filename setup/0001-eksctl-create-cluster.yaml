@@ -1,0 +1,14 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: hackathon
+  region: us-west-2
+nodeGroups:
+  - name: default
+    instanceType: m5.large
+    desiredCapacity: 2
+    volumeSize: 120
+    iam:
+      withAddonPolicies:
+        appMesh: true
+        xRay: true
